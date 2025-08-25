@@ -274,25 +274,29 @@ body {
   margin: 5px 0;
 }
 
-/* Скрываем меню по умолчанию на мобилках */
 @media (max-width: 768px) {
   .nav-list {
-    position: absolute;
-    top: 60px;
-    right: -250px;
+    position: fixed; /* фиксируем к экрану */
+    top: 0;
+    right: -250px; /* спрятано за экраном */
+    height: 100vh; /* во всю высоту */
     width: 200px;
     flex-direction: column;
+    justify-content: center;
     background: #111;
     padding: 20px;
-    gap: 15px;
+    gap: 20px;
     transition: right 0.3s ease-in-out;
+    z-index: 1000;
   }
 
   .nav-list.active {
-    right: 0;
+    right: 0; /* выезжает */
   }
 
   .nav-toggle {
     display: block;
+    z-index: 1100; /* поверх меню */
+    position: relative;
   }
 }
