@@ -79,3 +79,8 @@ navToggle.addEventListener("click", () => {
   const expanded = navToggle.getAttribute("aria-expanded") === "true" || false;
   navToggle.setAttribute("aria-expanded", !expanded);
 });
+toggle.addEventListener('click', () => {
+  const open = list.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', String(open));
+  document.body.classList.toggle('no-scroll', open);
+});
