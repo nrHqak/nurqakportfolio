@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sadibek Nurmukhambet — Portfolio</title>
+  <meta name="description" content="Мотивированный подросток с опытом в IT, проектном менеджменте и хакатонах." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="На главную">
+        <div class="brand-avatar" aria-hidden="true">SN</div>
+        <span class="brand-name">Sadibek Nurmukhambet</span>
+      </a>
+
+      <nav class="nav" aria-label="Главное меню">
+        <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Главная</a></li>
+          <li><a href="#about" class="nav-link">Обо мне</a></li>
+          <li><a href="#achievements" class="nav-link">Достижения</a></li>
+          <li><a href="#education" class="nav-link">Образование</a></li>
+          <li><a href="#experience" class="nav-link">Опыт</a></li>
+          <li><a href="#techstack" class="nav-link">Tech Stack</a></li>
+          <li><a href="#socials" class="nav-link">Social Links</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+        <span class="sun" aria-hidden="true">☀️</span>
+        <span class="moon" aria-hidden="true">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="section hero">
+      <div class="container hero-inner">
+        <div class="hero-text" data-animate="fade-up">
+          <p class="hero-kicker">Software Engineer • IT Enthusiast</p>
+          <h1 class="hero-title">Sadibek Nurmukhambet</h1>
+          <p class="hero-tagline">“Мотивированный подросток с опытом в IT, проектном менеджменте и хакатонах”</p>
+        </div>
+        <div class="hero-card" data-animate="fade-up" data-animate-delay="120">
+          <div class="profile-ring">
+            <img src="img/photo.jpg" alt="Sadibek Nurmukhambet" class="profile-avatar-img">
+          </div>
+          <ul class="quick-facts">
+            <li><span class="label">Роль:</span><span class="value">Software Engineer, IT Enthusiast, Co‑Founder & CEO</span></li>
+            <li><span class="label">Город:</span><span class="value">Атырау, Казахстан</span></li>
+            <li><span class="label">Статус:</span><span class="value">Открыт к новым проектам</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container narrow" data-animate="fade-up">
+        <h2 class="section-title">Обо мне</h2>
+        <p class="lead">
+          Мотивированный и целеустремлённый подросток с активной позицией и опытом в IT, управлении проектами,
+          маркетинге и организации мероприятий. Несмотря на возраст, обладаю серьёзным портфолио проектов,
+          которые принесли пользу сообществу.
+        </p>
+      </div>
+    </section>
+
+    <section id="achievements" class="section alt">
+      <div class="container" data-animate="fade-up">
+        <h2 class="section-title">Достижения</h2>
+        <div class="cards">
+          <article class="card"><div class="card-emoji">🥉</div><h3 class="card-title">3 место — Республиканская юниорская олимпиада по информатике</h3></article>
+          <article class="card"><div class="card-emoji">🥇</div><h3 class="card-title">3-кратный победитель школьного этапа Сетевой олимпиады</h3></article>
+          <article class="card"><div class="card-emoji">🥇</div><h3 class="card-title">1 место — NIS-FEST (экономика)</h3></article>
+          <article class="card"><div class="card-emoji">🥇</div><h3 class="card-title">Победитель школьного хакатона (2 раза)</h3></article>
+          <article class="card"><div class="card-emoji">💻</div><h3 class="card-title">Участник NIS Hackathon 2024</h3></article>
+          <article class="card"><div class="card-emoji">🥇</div><h3 class="card-title">1 место — турнир по дебатам OZGER Team</h3></article>
+          <article class="card"><div class="card-emoji">🌍</div><h3 class="card-title">Участник дебатов на английском</h3></article>
+          <article class="card"><div class="card-emoji">🥇</div><h3 class="card-title">1 место — региональный этап Owlympia</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="container" data-animate="fade-up">
+        <h2 class="section-title">Образование</h2>
+        <div class="edu-card">
+          <div class="edu-badge">🎓</div>
+          <div class="edu-content">
+            <h3 class="edu-title">Назарбаев Интеллектуальная Школа</h3>
+            <p class="edu-meta">10 класс • GPA 4.9</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+  <div class="container" data-animate="fade-up">
+    <h2 class="section-title">Опыт работы</h2>
+    <ul class="experience-list">
+      <li>Маркетолог в частном бизнесе IT-MAG</li>
+      <li>Член школьного самоуправления с 2022 года</li>
+      <li>Основатель клуба IT-движения CodeIT</li>
+      <li>Co‑Founder & Creative CEO в своём бизнесе</li>
+    </ul>
+  </div>
+</section>
+    <section id="techstack" class="section alt">
+  <div class="container" data-animate="fade-up">
+    <h2 class="section-title">Tech Stack</h2>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <h3>💻 Backend & ML</h3>
+        <p>Python (Django, Flask, FastAPI, PostgreSQL, TensorFlow, PyTorch и др.)</p>
+      </div>
+      <div class="tech-card">
+        <h3>🎨 Frontend</h3>
+        <p>HTML, CSS, JavaScript</p>
+      </div>
+      <div class="tech-card">
+        <h3>⚙️ С family</h3>
+        <p>C++, C#</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section id="socials" class="section alt">
+      <div class="container" data-animate="fade-up">
+        <h2 class="section-title">Social Links</h2>
+        <div class="contact-grid">
+          <a class="contact-card" href="https://www.instagram.com/sadibeknn?igsh=NnhtOXR4amg4cjhs&utm_source=qr" target="_blank">
+            <div class="contact-emoji">📷</div>
+            <div class="contact-content">
+              <p class="contact-label">Instagram</p>
+              <p class="contact-link">sadibeknn</p>
+            </div>
+          </a>
+          <a class="contact-card" href="https://t.me/nurqaktynomiri" target="_blank">
+            <div class="contact-emoji">✈️</div>
+            <div class="contact-content">
+              <p class="contact-label">Telegram Channel</p>
+              <p class="contact-link">nurqaktynomiri</p>
+            </div>
+          </a>
+          <a class="contact-card" href="https://leetcode.com/u/nurcode" target="_blank">
+            <div class="contact-emoji">🧩</div>
+            <div class="contact-content">
+              <p class="contact-label">LeetCode</p>
+              <p class="contact-link">nurcode</p>
+            </div>
+          </a>
+          <a class="contact-card" href="https://codeforces.com/profile/xokageN" target="_blank">
+            <div class="contact-emoji">⚡</div>
+            <div class="contact-content">
+              <p class="contact-label">Codeforces</p>
+              <p class="contact-link">xokageN</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Sadibek Nurmukhambet. Все права защищены.</p>
+      <a href="#top" class="to-top" aria-label="Наверх">↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Автоматическое обновление года в подвале
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Появление анимаций при прокрутке
+    const animateEls = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.1 });
+    animateEls.forEach(el => observer.observe(el));
+
+    // Переключение темы
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('light');
+    });
+
+    // Мобильное меню
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
+    navToggle.addEventListener('click', () => {
+      navList.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
