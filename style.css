@@ -257,3 +257,42 @@ body {
   margin: 0;
   color: var(--muted);
 }
+/* Скрываем бургер на ПК */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Три полоски */
+.nav-toggle-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+}
+
+/* Скрываем меню по умолчанию на мобилках */
+@media (max-width: 768px) {
+  .nav-list {
+    position: absolute;
+    top: 60px;
+    right: -250px;
+    width: 200px;
+    flex-direction: column;
+    background: #111;
+    padding: 20px;
+    gap: 15px;
+    transition: right 0.3s ease-in-out;
+  }
+
+  .nav-list.active {
+    right: 0;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}

@@ -69,3 +69,13 @@
 
 // === Footer year auto-update ===
 document.getElementById('year').textContent = new Date().getFullYear();
+const navToggle = document.querySelector(".nav-toggle");
+const navList = document.querySelector(".nav-list");
+
+navToggle.addEventListener("click", () => {
+  navList.classList.toggle("active");
+
+  // accessibility: переключаем aria-expanded
+  const expanded = navToggle.getAttribute("aria-expanded") === "true" || false;
+  navToggle.setAttribute("aria-expanded", !expanded);
+});
