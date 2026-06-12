@@ -14,7 +14,7 @@ export function LanguageSwitcher() {
   const { locale, setLocale } = useLanguage();
 
   return (
-    <div className="hidden sm:fixed sm:top-6 sm:right-6 z-50">
+    <div className="fixed bottom-6 right-6 sm:bottom-auto sm:top-6 sm:right-6 z-50">
       <div className="flex items-center gap-0.5 glass rounded-full p-1 shadow-lg">
         {locales.map((item) => {
           const isActive = locale === item.id;
