@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { awardIcons } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 export function AwardsSection() {
@@ -25,28 +24,55 @@ export function AwardsSection() {
           </h2>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-4">
-          {t.awards.items.map((award, index) => (
-            <motion.div
-              key={award.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {t.awards.spotlights.map((spotlight, index) => (
+            <motion.article
+              key={`${spotlight.value}-${spotlight.title}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="glass-card p-5 flex items-start gap-4"
+              transition={{ duration: 0.45, delay: index * 0.07 }}
+              className="glass-card p-5 min-w-0"
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-lg">
-                {awardIcons[index]}
+              <p className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
+                {spotlight.value}
+              </p>
+              <h3 className="mt-4 font-medium leading-snug text-foreground">
+                {spotlight.title}
+              </h3>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                {spotlight.subtitle}
+              </p>
+            </motion.article>
+          ))}
+        </div>
+
+        <div className="mt-12 grid lg:grid-cols-2 gap-5">
+          {t.awards.categories.map((category, categoryIndex) => (
+            <motion.article
+              key={category.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.45, delay: categoryIndex * 0.05 }}
+              className="glass-card p-5 md:p-6"
+            >
+              <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                {category.title}
+              </h3>
+              <div className="mt-5 divide-y divide-white/10">
+                {category.items.map((item) => (
+                  <div key={`${item.title}-${item.subtitle}`} className="py-4 first:pt-0 last:pb-0">
+                    <h4 className="font-medium leading-snug text-foreground">
+                      {item.title}
+                    </h4>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                      {item.subtitle}
+                    </p>
+                  </div>
+                ))}
               </div>
-              <div>
-                <h3 className="font-medium text-foreground leading-snug">
-                  {award.title}
-                </h3>
-                <p className="text-sm text-muted-foreground mt-1">
-                  {award.subtitle}
-                </p>
-              </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

@@ -4,16 +4,29 @@ export interface ProjectTranslation {
   title: string;
   description: string;
   badges: string[];
-}
-
-export interface AwardTranslation {
-  title: string;
-  subtitle: string;
+  eyebrow?: string;
+  researchNote?: string;
 }
 
 export interface HighlightTranslation {
   title: string;
   description: string;
+}
+
+export interface RecognitionItemTranslation {
+  title: string;
+  subtitle: string;
+}
+
+export interface RecognitionCategoryTranslation {
+  title: string;
+  items: RecognitionItemTranslation[];
+}
+
+export interface RecognitionSpotlightTranslation {
+  value: string;
+  title: string;
+  subtitle: string;
 }
 
 export interface SpokenLanguageTranslation {
@@ -31,7 +44,8 @@ export interface Translations {
     contact: string;
   };
   hero: {
-    viewProjects: string;
+    cta: string;
+    tagline: string;
   };
   about: {
     label: string;
@@ -40,24 +54,32 @@ export interface Translations {
   };
   featured: {
     label: string;
+    coreLabel: string;
+    stackLabel: string;
+    githubLabel: string;
   };
   projects: {
     label: string;
     heading: string;
+    selectedLabel: string;
+    moreLabel: string;
+    githubLabel: string;
     items: Record<string, ProjectTranslation>;
   };
   awards: {
     label: string;
     heading: string;
-    items: AwardTranslation[];
+    spotlights: RecognitionSpotlightTranslation[];
+    categories: RecognitionCategoryTranslation[];
   };
   skills: {
     label: string;
     heading: string;
     groups: {
+      languages: string;
       backend: string;
-      frontend: string;
-      other: string;
+      ai: string;
+      algorithms: string;
     };
     languagesLabel: string;
     spokenLanguages: SpokenLanguageTranslation[];

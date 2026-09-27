@@ -2,7 +2,7 @@
 
 import { Github, Instagram, Linkedin } from "lucide-react";
 import { LeetCodeIcon } from "@/components/icons/leetcode-icon";
-import { socialLinks } from "@/lib/data";
+import { socialLinks, type SocialLinkId } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 const iconMap = {
@@ -16,6 +16,7 @@ interface SocialLinksProps {
   className?: string;
   iconClassName?: string;
   size?: "sm" | "md" | "lg";
+  only?: SocialLinkId[];
 }
 
 const sizeClasses = {
@@ -34,10 +35,15 @@ export function SocialLinks({
   className,
   iconClassName,
   size = "md",
+  only,
 }: SocialLinksProps) {
+  const visibleLinks = only
+    ? socialLinks.filter((link) => only.includes(link.id))
+    : socialLinks;
+
   return (
     <div className={cn("flex items-center justify-center gap-3", className)}>
-      {socialLinks.map((link) => {
+      {visibleLinks.map((link) => {
         const Icon = iconMap[link.id];
 
         return (

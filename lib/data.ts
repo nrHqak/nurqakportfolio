@@ -1,7 +1,5 @@
 export const profile = {
   name: "Sadibek Nurmukhambet",
-  github: "https://github.com/nrHqak",
-  githubHandle: "github.com/nrHqak",
 };
 
 export const socialLinks = [
@@ -9,25 +7,111 @@ export const socialLinks = [
     id: "github" as const,
     url: "https://github.com/nrHqak",
     label: "GitHub",
+    showInHero: true,
   },
   {
     id: "instagram" as const,
     url: "https://www.instagram.com/sadibeknn?igsh=NnhtOXR4amg4cjhs&utm_source=qr",
     label: "Instagram",
+    showInHero: false,
   },
   {
     id: "linkedin" as const,
     url: "https://www.linkedin.com/in/nurmukhambet-sadibek-2386b82a6/",
     label: "LinkedIn",
+    showInHero: true,
   },
   {
     id: "leetcode" as const,
     url: "https://leetcode.com/u/nurcoder",
     label: "LeetCode",
+    showInHero: true,
   },
 ];
 
-export const projects = [
+export type SocialLinkId = (typeof socialLinks)[number]["id"];
+
+export interface Project {
+  id: string;
+  year: string;
+  stack: string[];
+  core?: string[];
+  badges: Array<{
+    key: string;
+    variant: "gold" | "blue";
+  }>;
+  featured: boolean;
+  group?: "selected" | "more";
+  logo?: string;
+  links?: {
+    github?: string;
+    demo?: string;
+  };
+}
+
+export const projects: Project[] = [
+  {
+    id: "algorhythm",
+    year: "2025–2026",
+    core: [
+      "Python Runtime Tracing",
+      "AST Analysis",
+      "Program Analysis",
+      "Algorithm Visualization",
+      "AI Tutor",
+    ],
+    stack: ["FastAPI", "React", "Supabase", "scikit-learn", "Docker"],
+    badges: [{ key: "first", variant: "gold" as const }],
+    featured: true,
+    logo: "/images/algorhythm-logo.png",
+    links: {
+      github: "https://github.com/nrHqak/AlgoRythm",
+    },
+  },
+  {
+    id: "digital-security",
+    year: "2026",
+    stack: [
+      "Android",
+      "Kotlin",
+      "Call Screening",
+      "Notification Listener",
+      "Chromium Extension",
+      "Risk Analysis",
+    ],
+    badges: [],
+    featured: false,
+    group: "selected",
+  },
+  {
+    id: "algorhythm-research",
+    year: "2026",
+    stack: [
+      "Python",
+      "AST",
+      "Execution Traces",
+      "Program Analysis",
+      "Dataset Design",
+      "Experiments",
+    ],
+    badges: [],
+    featured: false,
+    group: "selected",
+  },
+  {
+    id: "credit-default",
+    year: "2026",
+    stack: [
+      "Python",
+      "Neural Networks",
+      "scikit-learn",
+      "Feature Engineering",
+      "Model Evaluation",
+    ],
+    badges: [],
+    featured: false,
+    group: "selected",
+  },
   {
     id: "pharma-track",
     year: "2025",
@@ -37,6 +121,7 @@ export const projects = [
       { key: "prize", variant: "gold" as const },
     ],
     featured: false,
+    group: "more",
   },
   {
     id: "komektez",
@@ -47,86 +132,40 @@ export const projects = [
       { key: "quota", variant: "blue" as const },
     ],
     featured: false,
+    group: "more",
+    links: {
+      github: "https://github.com/nrHqak/komektez",
+    },
   },
-  {
-    id: "algorhythm",
-    year: "2025–2026",
-    stack: [
-      "FastAPI",
-      "React",
-      "Supabase",
-      "Gemini AI",
-      "scikit-learn",
-      "Docker",
-    ],
-    badges: [{ key: "first", variant: "gold" as const }],
-    featured: true,
-    logo: "/images/algorhythm-logo.png",
-  },
-  {
-    id: "hackx",
-    year: "2025",
-    stack: ["Organizer & Lead"],
-    badges: [],
-    featured: false,
-  },
-];
-
-export const awardIcons = [
-  "🥇",
-  "🥇",
-  "🥇",
-  "🥇",
-  "🥇",
-  "🥇",
-  "🥈",
-  "🥉",
-  "🤖",
-  "🤖",
-  "🏛",
-  "…",
 ];
 
 export const skills = [
   {
+    key: "languages" as const,
+    items: ["Python", "C++", "SQL", "JavaScript / TypeScript"],
+  },
+  {
     key: "backend" as const,
-    items: [
-      "Python",
-      "FastAPI",
-      "Django",
-      "PostgreSQL",
-      "SQLite",
-      "Supabase",
-      "SQLAlchemy",
-      "Docker",
-      "REST",
-    ],
+    items: ["FastAPI", "PostgreSQL", "Supabase", "Docker", "REST APIs"],
   },
   {
-    key: "frontend" as const,
+    key: "ai" as const,
     items: [
-      "React.js",
-      "Next.js",
-      "Vite",
-      "Tailwind",
-      "Bootstrap",
-      "Leaflet",
-      "Axios",
-    ],
-  },
-  {
-    key: "other" as const,
-    items: [
-      "ML",
       "scikit-learn",
+      "Neural Networks",
+      "LLM APIs",
+      "Feature Engineering",
+      "Model Evaluation",
+    ],
+  },
+  {
+    key: "algorithms" as const,
+    items: [
+      "Data Structures & Algorithms",
       "AST",
-      "Blockchain",
-      "Smart Contracts",
-      "C++",
-      "C# .NET",
-      "MicroPython",
-      "Arduino",
-      "AI Agents",
+      "Execution Tracing",
+      "Program Analysis",
+      "Arduino / MicroPython",
     ],
   },
 ];

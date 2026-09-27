@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Rocket, Users } from "lucide-react";
+import { Binary, BrainCircuit, Code2 } from "lucide-react";
 import Image from "next/image";
 import { profile } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n/language-context";
 
-const highlightIcons = [Code2, Rocket, Users];
+const highlightIcons = [Code2, BrainCircuit, Binary];
 
 export function AboutSection() {
   const { t } = useLanguage();
@@ -44,7 +44,7 @@ export function AboutSection() {
               className="glass-card p-6 md:p-8 h-full flex flex-col justify-between gap-6"
             >
               <div className="space-y-4">
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
                   {t.profile.about}
                 </p>
               </div>
@@ -74,16 +74,16 @@ export function AboutSection() {
               return (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.5, delay: 0.1 * index }}
-                  className="glass-card p-5 md:p-6 flex items-start gap-4 h-full"
+                  className="glass-card min-w-0 p-5 md:p-6 flex items-start gap-4 h-full"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
                     <Icon className="h-5 w-5 text-primary" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="font-semibold text-foreground">
                       {item.title}
                     </h3>

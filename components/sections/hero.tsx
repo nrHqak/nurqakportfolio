@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Github, MapPin } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { ShaderAnimation } from "@/components/ui/shader-animation";
-import { profile } from "@/lib/data";
+import { profile, socialLinks } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 export function HeroSection() {
@@ -23,19 +23,9 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="space-y-6"
+          className="space-y-5"
         >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm text-muted-foreground"
-        >
-            <MapPin className="w-3.5 h-3.5 text-primary" />
-            {t.profile.location}
-          </motion.div>
-
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-gradient leading-[1.05]">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-gradient leading-[1.05] break-words">
             {profile.name}
           </h1>
 
@@ -43,7 +33,11 @@ export function HeroSection() {
             {t.profile.title}
           </p>
 
-          <p className="text-base md:text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-foreground/85 max-w-2xl mx-auto leading-relaxed">
+            {t.hero.tagline}
+          </p>
+
+          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {t.profile.school}
           </p>
 
@@ -51,24 +45,30 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-          className="relative z-20 flex flex-wrap items-center justify-center gap-4 pt-4"
+            className="relative z-20 flex flex-col items-center justify-center gap-5 pt-4"
           >
             <a
               href="#projects"
               className="pointer-events-auto relative z-20 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:scale-105"
             >
-              {t.hero.viewProjects}
+              {t.hero.cta}
               <ArrowDown className="w-4 h-4" />
             </a>
-            <a
-              href={profile.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pointer-events-auto relative z-20 inline-flex items-center gap-2 glass rounded-full px-6 py-3 text-sm font-semibold transition-all hover:bg-white/10 hover:scale-105"
-            >
-              <Github className="w-4 h-4" />
-              {profile.githubHandle}
-            </a>
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+              {socialLinks
+                .filter((link) => link.showInHero)
+                .map((link) => (
+                  <a
+                    key={link.id}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {link.label} ↗
+                  </a>
+                ))}
+            </div>
           </motion.div>
         </motion.div>
 

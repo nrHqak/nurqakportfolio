@@ -5,39 +5,74 @@ export const translations: Record<Locale, Translations> = {
     nav: {
       home: "Home",
       about: "About",
-      projects: "Projects",
-      awards: "Awards",
+      projects: "Work",
+      awards: "Recognition",
       skills: "Skills",
       contact: "Contact",
     },
     hero: {
-      viewProjects: "View Projects",
+      cta: "Explore my work",
+      tagline:
+        "I build software systems around algorithms, AI and real-world problems.",
     },
     about: {
       label: "About",
-      heading: "Building products that win",
+      heading: "Engineering, research & products",
       highlights: [
         {
-          title: "Backend-Heavy",
+          title: "Systems & Backend",
           description: "Python · FastAPI · PostgreSQL",
         },
         {
-          title: "Ship Fast",
-          description: "3× Hackathon 1st Places",
+          title: "AI & Machine Learning",
+          description: "ML · Neural Networks · LLM Systems",
         },
         {
-          title: "Lead Well",
-          description: "Prime Minister · HackX Organizer",
+          title: "Algorithms & Research",
+          description: "Execution Tracing · AST · Experimentation",
         },
       ],
     },
     featured: {
       label: "Featured Project",
+      coreLabel: "Core",
+      stackLabel: "Stack",
+      githubLabel: "GitHub ↗",
     },
     projects: {
-      label: "Projects",
-      heading: "What I've built",
+      label: "Work",
+      heading: "Selected work",
+      selectedLabel: "Selected Work",
+      moreLabel: "More Projects",
+      githubLabel: "GitHub ↗",
       items: {
+        algorhythm: {
+          title: "AlgoRythm — Algorithm Learning Platform",
+          description:
+            "An interactive platform for understanding algorithms through their actual execution. AlgoRythm traces Python programs at runtime, converts execution states into structured visual steps, and uses program analysis to recognize algorithmic patterns. An AI mentor helps explain what happens during execution instead of simply presenting a solution.",
+          researchNote:
+            "Current work: research on program behavior using execution traces and source-code structure.",
+          badges: ["🥇 1st place · NIS Project Fest (International)"],
+        },
+        "digital-security": {
+          title: "Digital Security / Anti-Fraud System",
+          description:
+            "A multi-layer anti-fraud system designed to interrupt social-engineering attacks in real time. It combines Android call and notification monitoring, temporary app shielding, a Chromium security extension and automated risk analysis.",
+          badges: [],
+        },
+        "algorhythm-research": {
+          title: "AlgoRythm Research",
+          eyebrow: "Research · Ongoing",
+          description:
+            "Exploring how program structure and execution traces can be used to characterize algorithm behavior. The work focuses on runtime traces, source-code structure, reproducible sampling and experimental comparison.",
+          badges: [],
+        },
+        "credit-default": {
+          title: "Credit Default Prediction",
+          description:
+            "Built and tuned a neural-network classifier for credit-default prediction, focusing on imbalanced data, regularization, feature engineering and decision-threshold optimization.",
+          badges: [],
+        },
         "pharma-track": {
           title: "Pharma Track — Drug Quality & Lifecycle Platform",
           description:
@@ -56,71 +91,112 @@ export const translations: Record<Locale, Translations> = {
             "Quota to Republic stage",
           ],
         },
-        algorhythm: {
-          title: "AlgoRythm — Algorithm Learning Platform",
-          description:
-            "Students paste Python code → step-by-step tracer (sys.settrace) → SVG bar chart animation → AI mentor hints (Socratic style). ML classifier detects algorithm type via AST analysis. XP, streaks, daily quiz, Algorithm Pet for retention.",
-          badges: ["🥇 1st place · NIS Project Fest (International)"],
-        },
-        hackx: {
-          title: "HackX — City Hackathon",
-          description:
-            "Founded and ran a city-level hackathon in Atyrau with support from BIL, NIS, and the Regional Hub. 10+ teams, 50+ participants. Managed partnerships, logistics, and jury from scratch.",
-          badges: [],
-        },
       },
     },
     awards: {
-      label: "Awards",
-      heading: "Achievements & recognition",
-      items: [
+      label: "Recognition",
+      heading: "Selected recognition",
+      spotlights: [
         {
-          title: "1st — World Robotics Olympiad (Regional Stage)",
-          subtitle: "Future Engineers category · 2026",
+          value: "500,000 ₸",
+          title: "Atyrau Youth Hackathon",
+          subtitle: "1st Place",
         },
         {
-          title: "1st — Atyrau Youth Hackathon",
-          subtitle: "Pharma Track · 500,000 KZT · 2025",
+          value: "1st",
+          title: "World Robot Olympiad",
+          subtitle: "Regional · Future Engineers",
         },
         {
-          title: "1st — NIS Hackathon 2026",
-          subtitle: "KomekTez · Quota to Republic stage",
+          value: "3rd",
+          title: "NIS Network Informatics Olympiad",
+          subtitle: "Network / Republic level",
         },
         {
-          title: "1st — NIS Project Fest",
-          subtitle: "AlgoRythm · International level · 2025",
+          value: "1.2M+ ₸",
+          title: "Sponsorship raised",
+          subtitle: "Student Government",
+        },
+      ],
+      categories: [
+        {
+          title: "Computer Science & AI",
+          items: [
+            {
+              title: "3rd — NIS Network Olympiad, Informatics",
+              subtitle: "Republic level · 2024",
+            },
+            {
+              title: "1st — School Olympiad, Informatics",
+              subtitle: "NIS Atyrau · 2025",
+            },
+            {
+              title: "1st — NIS Project Fest",
+              subtitle: "AlgoRythm · International level · 2025",
+            },
+          ],
         },
         {
-          title: "1st — School Olympiad, Informatics",
-          subtitle: "NIS Atyrau · 2025",
+          title: "Robotics & Engineering",
+          items: [
+            {
+              title: "1st — World Robotics Olympiad",
+              subtitle: "Regional Stage · Future Engineers · 2026",
+            },
+            {
+              title: "Robot Design Award Finalist",
+              subtitle: "BATYS Robotics & Drones · Quota to Central Asia",
+            },
+            {
+              title: "Adaptive Strategy Award",
+              subtitle: "Central Asia FIRST Championship 2026",
+            },
+          ],
         },
         {
-          title: "1st — JasRepublic CUP (Regional)",
-          subtitle: "Debate · Respublica · 2024",
+          title: "Products & Hackathons",
+          items: [
+            {
+              title: "1st — Atyrau Youth Hackathon",
+              subtitle: "Pharma Track · 500,000 ₸ · 2025",
+            },
+            {
+              title: "1st — NIS Hackathon 2026",
+              subtitle: "KomekTez · Quota to Republic stage",
+            },
+          ],
         },
         {
-          title: "Silver — Owlympia Regional Olympiad",
-          subtitle: "2024",
+          title: "Programs & Communities",
+          items: [
+            {
+              title: "The Knowledge Society (TKS)",
+              subtitle: "Selected Member · 2026–2027",
+            },
+            {
+              title: "Veritas AI Scholars",
+              subtitle: "AI Scholars Bootcamp · Summer 2026 · Completed July 24, 2026",
+            },
+          ],
         },
         {
-          title: "3rd — NIS Network Olympiad, Informatics",
-          subtitle: "Republic level · 2024",
-        },
-        {
-          title: "Robot Design Award Finalist",
-          subtitle: "BATYS Robotics & Drones · Quota to Central Asia",
-        },
-        {
-          title: "Adaptive Strategy Award",
-          subtitle: "Central Asia FIRST Championship 2026",
-        },
-        {
-          title: "Prime Minister — Student Government",
-          subtitle: "NIS Atyrau · 2025–2026 · Attracted 1.2M+ KZT from sponsors",
-        },
-        {
-          title: "Coming soon...",
-          subtitle: "New achievements are on the way",
+          title: "Leadership & Initiatives",
+          items: [
+            {
+              title: "HackX",
+              subtitle:
+                "Founder & Organizer · City-level hackathon in Atyrau · 10+ teams · 50+ participants",
+            },
+            {
+              title: "Prime Minister — Student Government",
+              subtitle:
+                "NIS Atyrau · 2025–2026 · 1.2M+ KZT raised from sponsors",
+            },
+            {
+              title: "1st — JasRepublic CUP",
+              subtitle: "Regional debate · Respublica · 2024",
+            },
+          ],
         },
       ],
     },
@@ -128,11 +204,12 @@ export const translations: Record<Locale, Translations> = {
       label: "Skills",
       heading: "Technical expertise",
       groups: {
-        backend: "Backend",
-        frontend: "Frontend",
-        other: "Other",
+        languages: "Languages",
+        backend: "Backend & Systems",
+        ai: "AI & Machine Learning",
+        algorithms: "Algorithms & Research",
       },
-      languagesLabel: "Languages",
+      languagesLabel: "Spoken languages",
       spokenLanguages: [
         { name: "Kazakh", level: "Native" },
         { name: "Russian", level: "Fluent" },
@@ -141,66 +218,101 @@ export const translations: Record<Locale, Translations> = {
     },
     contact: {
       label: "Contact",
-      heading: "Let's build something together",
+      heading: "Let's connect.",
       description:
-        "Open to collaborations, hackathons, and interesting projects. Reach out via social media or GitHub.",
+        "Open to technical collaborations, research, software projects and interesting engineering problems.",
       cta: "Get in touch",
     },
     footer: {
       builtWith: "Built with Next.js & Framer Motion.",
     },
     profile: {
-      title: "Fullstack Developer · Builder · Leader",
+      title: "Software Engineer · AI/ML · Backend",
       location: "Atyrau, Kazakhstan",
-      school: "NIS Atyrau · Grade 10 · 16 y.o.",
+      school: "NIS Atyrau · Class of 2028",
       about:
-        "Fullstack developer (backend-heavy) specializing in Python. I don't just build products — I win with them. Three hackathon 1st places, two robotics awards, republic-level olympiad medals, and a city hackathon I organized from scratch. I ship fast and lead well.",
+        "My main focus is Python, backend systems, AI/ML and algorithms. I enjoy going beyond interfaces and understanding how systems work underneath — from execution tracing and AST analysis to machine-learning models, APIs and product architecture.\n\nI use projects to explore technical ideas and turn them into working systems: from algorithm visualization and program analysis to machine learning and digital-security tools.",
     },
   },
   ru: {
     nav: {
       home: "Главная",
       about: "Обо мне",
-      projects: "Проекты",
-      awards: "Награды",
+      projects: "Работы",
+      awards: "Достижения",
       skills: "Навыки",
       contact: "Контакты",
     },
     hero: {
-      viewProjects: "Смотреть проекты",
+      cta: "Смотреть работы",
+      tagline:
+        "Создаю программные системы на стыке алгоритмов, AI и реальных задач.",
     },
     about: {
       label: "Обо мне",
-      heading: "Создаю продукты, которые побеждают",
+      heading: "Инженерия, исследования и продукты",
       highlights: [
         {
-          title: "Бэкенд-фокус",
+          title: "Systems & Backend",
           description: "Python · FastAPI · PostgreSQL",
         },
         {
-          title: "Быстрые релизы",
-          description: "3× 1-е место на хакатонах",
+          title: "AI & Machine Learning",
+          description: "ML · Neural Networks · LLM Systems",
         },
         {
-          title: "Лидерство",
-          description: "Премьер-министр · Организатор HackX",
+          title: "Algorithms & Research",
+          description: "Execution Tracing · AST · Experimentation",
         },
       ],
     },
     featured: {
       label: "Избранный проект",
+      coreLabel: "Основа",
+      stackLabel: "Стек",
+      githubLabel: "GitHub ↗",
     },
     projects: {
-      label: "Проекты",
-      heading: "Что я создал",
+      label: "Работы",
+      heading: "Избранные работы",
+      selectedLabel: "Избранные работы",
+      moreLabel: "Другие проекты",
+      githubLabel: "GitHub ↗",
       items: {
+        algorhythm: {
+          title: "AlgoRythm — Платформа изучения алгоритмов",
+          description:
+            "Интерактивная платформа для изучения алгоритмов через их реальное выполнение. AlgoRythm отслеживает выполнение Python-программ, преобразует состояния программы в структурированные пошаговые визуализации и использует анализ кода для определения алгоритмических паттернов. AI-наставник помогает понять происходящее во время выполнения программы, а не просто показывает готовое решение.",
+          researchNote:
+            "Текущая работа: исследование поведения программ через execution traces и структуру исходного кода.",
+          badges: ["🥇 1-е место · NIS Project Fest (Международный)"],
+        },
+        "digital-security": {
+          title: "Digital Security / Anti-Fraud System",
+          description:
+            "Многоуровневая anti-fraud система для прерывания атак социальной инженерии в реальном времени. Объединяет анализ звонков и уведомлений на Android, временную блокировку приложений, Chromium-расширение и автоматическую оценку риска.",
+          badges: [],
+        },
+        "algorhythm-research": {
+          title: "AlgoRythm Research",
+          eyebrow: "Исследование · В работе",
+          description:
+            "Исследование того, как структура исходного кода и execution traces могут использоваться для анализа поведения алгоритмов. Работа включает runtime traces, анализ структуры программ, воспроизводимый sampling и экспериментальное сравнение.",
+          badges: [],
+        },
+        "credit-default": {
+          title: "Credit Default Prediction",
+          description:
+            "Разработал и настроил нейросетевой классификатор для прогнозирования кредитного дефолта с фокусом на дисбаланс классов, регуляризацию, feature engineering и оптимизацию decision threshold.",
+          badges: [],
+        },
         "pharma-track": {
           title: "Pharma Track — Платформа контроля качества лекарств",
           description:
             "Веб-приложение для граждан и государства: отслеживание качества лекарств и полной истории препаратов. Telegram-бот для мобильного доступа. Разработан и представлен как тимлид.",
           badges: [
             "🥇 1-е место · Молодёжный хакатон Атырау",
-            "Приз 500 000 тг",
+            "Приз 500 000 ₸",
           ],
         },
         komektez: {
@@ -212,71 +324,113 @@ export const translations: Record<Locale, Translations> = {
             "Квота на республиканский этап",
           ],
         },
-        algorhythm: {
-          title: "AlgoRythm — Платформа изучения алгоритмов",
-          description:
-            "Студенты вставляют Python-код → пошаговый трейсер (sys.settrace) → SVG-анимация столбчатой диаграммы → AI-наставник (сократический стиль). ML-классификатор определяет тип алгоритма через AST. XP, стрики, ежедневная викторина, Algorithm Pet для удержания.",
-          badges: ["🥇 1-е место · NIS Project Fest (Международный)"],
-        },
-        hackx: {
-          title: "HackX — Городской хакатон",
-          description:
-            "Основал и провёл городской хакатон в Атырау при поддержке BIL, НИШ и Регионального хаба. 10+ команд, 50+ участников. Партнёрства, логистика и жюри — с нуля.",
-          badges: [],
-        },
       },
     },
     awards: {
-      label: "Награды",
-      heading: "Достижения и признание",
-      items: [
+      label: "Достижения",
+      heading: "Избранные достижения",
+      spotlights: [
         {
-          title: "1-е место — World Robotics Olympiad (региональный этап)",
-          subtitle: "Категория Future Engineers · 2026",
+          value: "500 000 ₸",
+          title: "Молодёжный хакатон Атырау",
+          subtitle: "1-е место",
         },
         {
-          title: "1-е место — Молодёжный хакатон Атырау",
-          subtitle: "Pharma Track · 500 000 тг · 2025",
+          value: "1-е",
+          title: "World Robot Olympiad",
+          subtitle: "Региональный этап · Future Engineers",
         },
         {
-          title: "1-е место — Хакатон НИШ 2026",
-          subtitle: "KomekTez · Квота на республиканский этап",
+          value: "3-е",
+          title: "Сетевая олимпиада НИШ по информатике",
+          subtitle: "Республиканский уровень",
         },
         {
-          title: "1-е место — NIS Project Fest",
-          subtitle: "AlgoRythm · Международный уровень · 2025",
+          value: "1.2M+ ₸",
+          title: "Привлечено спонсорских средств",
+          subtitle: "Студенческое правительство",
+        },
+      ],
+      categories: [
+        {
+          title: "Computer Science & AI",
+          items: [
+            {
+              title: "3-е место — Сетевая олимпиада НИШ по информатике",
+              subtitle: "Республиканский уровень · 2024",
+            },
+            {
+              title: "1-е место — Школьная олимпиада по информатике",
+              subtitle: "НИШ Атырау · 2025",
+            },
+            {
+              title: "1-е место — NIS Project Fest",
+              subtitle: "AlgoRythm · Международный уровень · 2025",
+            },
+          ],
         },
         {
-          title: "1-е место — Школьная олимпиада по информатике",
-          subtitle: "НИШ Атырау · 2025",
+          title: "Робототехника и инженерия",
+          items: [
+            {
+              title: "1-е место — World Robotics Olympiad",
+              subtitle: "Региональный этап · Future Engineers · 2026",
+            },
+            {
+              title: "Финалист Robot Design Award",
+              subtitle: "BATYS Robotics & Drones · Квота в Центральную Азию",
+            },
+            {
+              title: "Adaptive Strategy Award",
+              subtitle: "Central Asia FIRST Championship 2026",
+            },
+          ],
         },
         {
-          title: "1-е место — JasRepublic CUP (Региональный)",
-          subtitle: "Дебаты · Respublica · 2024",
+          title: "Продукты и хакатоны",
+          items: [
+            {
+              title: "1-е место — Молодёжный хакатон Атырау",
+              subtitle: "Pharma Track · 500 000 ₸ · 2025",
+            },
+            {
+              title: "1-е место — Хакатон НИШ 2026",
+              subtitle: "KomekTez · Квота на республиканский этап",
+            },
+          ],
         },
         {
-          title: "Серебро — Региональная олимпиада Owlympia",
-          subtitle: "2024",
+          title: "Программы и сообщества",
+          items: [
+            {
+              title: "The Knowledge Society (TKS)",
+              subtitle: "Отобран в программу · 2026–2027",
+            },
+            {
+              title: "Veritas AI Scholars",
+              subtitle:
+                "AI Scholars Bootcamp · Summer 2026 · Завершено 24 июля 2026",
+            },
+          ],
         },
         {
-          title: "3-е место — Сетевая олимпиада НИШ по информатике",
-          subtitle: "Республиканский уровень · 2024",
-        },
-        {
-          title: "Финалист Robot Design Award",
-          subtitle: "BATYS Robotics & Drones · Квота в Центральную Азию",
-        },
-        {
-          title: "Adaptive Strategy Award",
-          subtitle: "Central Asia FIRST Championship 2026",
-        },
-        {
-          title: "Премьер-министр — Студенческое правительство",
-          subtitle: "НИШ Атырау · 2025–2026 · Привлек 1.2M+ KZT от спонсоров",
-        },
-        {
-          title: "Скоро...",
-          subtitle: "Новые достижения уже в пути",
+          title: "Лидерство и инициативы",
+          items: [
+            {
+              title: "HackX",
+              subtitle:
+                "Основатель и организатор · Городской хакатон в Атырау · 10+ команд · 50+ участников",
+            },
+            {
+              title: "Премьер-министр — Студенческое правительство",
+              subtitle:
+                "НИШ Атырау · 2025–2026 · 1.2M+ KZT привлечено от спонсоров",
+            },
+            {
+              title: "1-е место — JasRepublic CUP",
+              subtitle: "Региональные дебаты · Respublica · 2024",
+            },
+          ],
         },
       ],
     },
@@ -284,11 +438,12 @@ export const translations: Record<Locale, Translations> = {
       label: "Навыки",
       heading: "Техническая экспертиза",
       groups: {
-        backend: "Бэкенд",
-        frontend: "Фронтенд",
-        other: "Другое",
+        languages: "Языки программирования",
+        backend: "Backend и системы",
+        ai: "AI и Machine Learning",
+        algorithms: "Алгоритмы и исследования",
       },
-      languagesLabel: "Языки",
+      languagesLabel: "Разговорные языки",
       spokenLanguages: [
         { name: "Казахский", level: "Родной" },
         { name: "Русский", level: "Свободно" },
@@ -297,20 +452,20 @@ export const translations: Record<Locale, Translations> = {
     },
     contact: {
       label: "Контакты",
-      heading: "Давайте создадим что-то вместе",
+      heading: "Будем на связи.",
       description:
-        "Открыт к сотрудничеству, хакатонам и интересным проектам. Свяжитесь через соцсети или GitHub.",
+        "Открыт к техническим коллаборациям, исследованиям, software-проектам и интересным инженерным задачам.",
       cta: "Связаться",
     },
     footer: {
       builtWith: "Создано на Next.js и Framer Motion.",
     },
     profile: {
-      title: "Fullstack-разработчик · Создатель · Лидер",
+      title: "Software Engineer · AI/ML · Backend",
       location: "Атырау, Казахстан",
-      school: "НИШ Атырау · 10 класс · 16 лет",
+      school: "НИШ Атырау · Выпуск 2028",
       about:
-        "Fullstack-разработчик (с упором на бэкенд), специализируюсь на Python. Я не просто создаю продукты — я выигрываю с ними. Три первых места на хакатонах, две награды в робототехнике, медали республиканских олимпиад и городской хакатон, который я организовал с нуля. Быстро выпускаю продукты и умею вести команду.",
+        "Мой основной фокус — Python, backend-системы, AI/ML и алгоритмы. Мне интересно не только собирать интерфейсы, но и разбираться в том, как системы работают изнутри — от execution tracing и AST-анализа до ML-моделей, API и архитектуры продукта.\n\nЯ использую проекты как способ исследовать технические идеи и превращать их в работающие системы: от визуализации алгоритмов и анализа программ до машинного обучения и инструментов цифровой безопасности.",
     },
   },
 };

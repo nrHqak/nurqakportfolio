@@ -25,7 +25,7 @@ export function SkillsSection() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-5 mb-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
           {skills.map((group, index) => (
             <motion.div
               key={group.key}
@@ -57,16 +57,16 @@ export function SkillsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="glass-card p-6"
+          className="glass-card px-5 py-4"
         >
           <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">
             {t.skills.languagesLabel}
           </h3>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
             {t.skills.spokenLanguages.map((lang) => (
               <span
                 key={lang.name}
-                className="glass rounded-full px-4 py-2 text-sm"
+                className="text-sm"
               >
                 <span className="font-medium text-foreground">{lang.name}</span>
                 <span className="text-muted-foreground"> — {lang.level}</span>
