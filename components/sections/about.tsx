@@ -32,15 +32,15 @@ export function AboutSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-6 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.78fr_1.22fr] gap-6 lg:gap-8 items-stretch">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="glass-card overflow-hidden md:grid md:grid-cols-[0.75fr_1.25fr] md:items-stretch md:gap-5 md:p-4 lg:block lg:p-0"
+            className="glass-card h-full overflow-hidden"
           >
-            <div className="relative aspect-[4/5] w-full overflow-hidden bg-white/5 md:aspect-auto md:min-h-[320px] lg:aspect-[4/5] lg:min-h-0">
+            <div className="relative aspect-[4/3] max-h-[380px] w-full overflow-hidden bg-white/5">
               <Image
                 src="/images/profile.jpg"
                 alt={profile.name}
@@ -50,7 +50,7 @@ export function AboutSection() {
               />
               <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/45 to-transparent" />
             </div>
-            <div className="p-5 md:flex md:flex-col md:justify-center md:p-2 lg:block lg:p-6">
+            <div className="p-5 md:p-6">
               <h3 className="text-lg font-semibold text-foreground">
                 {profile.name}
               </h3>
@@ -63,7 +63,7 @@ export function AboutSection() {
             </div>
           </motion.div>
 
-          <div className="grid gap-4">
+          <div className="grid h-full grid-rows-3 gap-4">
             {t.about.highlights.map((item, index) => {
               const Icon = highlightIcons[item.icon];
 

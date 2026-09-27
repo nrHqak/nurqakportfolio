@@ -19,7 +19,7 @@ export const translations: Record<Locale, Translations> = {
       label: "About",
       heading: "Engineering, research & products",
       personal:
-        "I'm Sadibek. I like breaking complex systems down, understanding why they work the way they do, and turning ideas into real products and experiments.\n\nI enjoy environments where I have to learn fast and test myself in practice — software engineering, research, robotics, hackathons and independent projects.",
+        "I'm Nurmukhambet. I like breaking complex systems down, understanding why they work, and turning ideas into real products and experiments.\n\nSoftware, research, robotics and competitive projects are how I learn fastest — by building, testing and iterating.",
       highlights: [
         {
           icon: "systems",
@@ -68,6 +68,8 @@ export const translations: Record<Locale, Translations> = {
       selectedLabel: "Selected Work",
       moreLabel: "More Projects",
       githubLabel: "GitHub ↗",
+      previousLabel: "Previous project",
+      nextLabel: "Next project",
       items: {
         algorhythm: {
           title: "AlgoRythm — Algorithm Learning Platform",
@@ -81,14 +83,16 @@ export const translations: Record<Locale, Translations> = {
           title: "Qorqau Ecosystem",
           eyebrow: "Digital Security · Anti-Fraud",
           description:
-            "A digital-security ecosystem built to interrupt social-engineering attacks before a victim is pushed into a high-risk action. The system combines Android call and notification analysis, temporary app shielding, phone-risk checks, a Chromium security extension and an AI-assisted security flow.",
+            "A digital-security ecosystem built to interrupt social-engineering attacks before a victim reaches a high-risk action.",
+          context:
+            "Call + notification analysis · app shielding · phone-risk checks · Chromium extension · AI-assisted security flow",
           badges: [],
         },
         "algorhythm-research": {
           title: "AlgoRythm Research",
           eyebrow: "Independent Research · Pilot Study",
           description:
-            "A pilot independent scientific research project extending AlgoRythm beyond product development. The research studies whether source-code structure and execution traces can be used to characterize algorithm behaviour through a reproducible experimental pipeline.",
+            "A pilot independent scientific research project extending AlgoRythm beyond product development. It studies whether source-code structure and execution traces can characterize algorithm behaviour through a reproducible pipeline.",
           context:
             "Focus: sampling protocol · dataset construction · runtime traces · controlled experiments",
           badges: [],
@@ -97,7 +101,9 @@ export const translations: Record<Locale, Translations> = {
           title: "Credit Card Default Prediction",
           eyebrow: "Veritas AI Scholars · Final Project",
           description:
-            "Final machine-learning project completed and successfully defended during the Veritas AI Scholars program. We developed and tuned a neural-network classifier for credit-card default prediction, working with class imbalance, regularization, feature engineering, model evaluation and decision-threshold optimization.",
+            "Final machine-learning project completed and successfully defended during the Veritas AI Scholars program. We developed a neural-network classifier for credit-card default prediction.",
+          context:
+            "Class imbalance · regularization · feature engineering · model evaluation · decision-threshold optimization",
           badges: [],
         },
         "pharma-track": {
@@ -295,7 +301,7 @@ export const translations: Record<Locale, Translations> = {
       label: "Обо мне",
       heading: "Инженерия, исследования и продукты",
       personal:
-        "Я Садыбек. Мне нравится разбирать сложные системы, понимать, почему они работают именно так, а затем превращать идеи в реальные продукты и эксперименты.\n\nМне близка среда, где нужно быстро учиться и проверять себя на практике — программирование, исследования, робототехника, хакатоны и работа над собственными проектами.",
+        "Я Нурмухамбет. Мне нравится разбирать сложные системы, понимать, почему они работают, и превращать идеи в реальные продукты и эксперименты.\n\nПрограммирование, исследования, робототехника и соревновательные проекты — среда, в которой я быстрее всего учусь через практику.",
       highlights: [
         {
           icon: "systems",
@@ -344,6 +350,8 @@ export const translations: Record<Locale, Translations> = {
       selectedLabel: "Избранные работы",
       moreLabel: "Другие проекты",
       githubLabel: "GitHub ↗",
+      previousLabel: "Предыдущий проект",
+      nextLabel: "Следующий проект",
       items: {
         algorhythm: {
           title: "AlgoRythm — Платформа изучения алгоритмов",
@@ -357,14 +365,16 @@ export const translations: Record<Locale, Translations> = {
           title: "Qorqau Ecosystem",
           eyebrow: "Digital Security · Anti-Fraud",
           description:
-            "Экосистема цифровой безопасности, созданная для прерывания атак социальной инженерии до того, как пользователь совершит рискованное действие. Система объединяет анализ звонков и уведомлений на Android, временную блокировку приложений, проверку риска номера, Chromium-расширение и AI-assisted security flow.",
+            "Экосистема цифровой безопасности, созданная для прерывания атак социальной инженерии до того, как пользователь совершит рискованное действие.",
+          context:
+            "Анализ звонков и уведомлений · блокировка приложений · проверка риска номера · Chromium-расширение · AI-assisted security flow",
           badges: [],
         },
         "algorhythm-research": {
           title: "AlgoRythm Research",
           eyebrow: "Независимое исследование · Pilot Study",
           description:
-            "Пилотное независимое научное исследование, развивающее AlgoRythm уже за пределами продуктовой разработки. Исследование проверяет, можно ли использовать структуру исходного кода и execution traces для характеристики поведения алгоритмов через воспроизводимый экспериментальный pipeline.",
+            "Пилотное независимое научное исследование, развивающее AlgoRythm за пределами продуктовой разработки. Оно проверяет, можно ли характеризовать поведение алгоритмов через структуру исходного кода и execution traces.",
           context:
             "Фокус: sampling protocol · построение dataset · runtime traces · контролируемые эксперименты",
           badges: [],
@@ -373,7 +383,9 @@ export const translations: Record<Locale, Translations> = {
           title: "Credit Card Default Prediction",
           eyebrow: "Veritas AI Scholars · Final Project",
           description:
-            "Финальный ML-проект, выполненный и успешно защищённый в рамках программы Veritas AI Scholars. Мы разработали и настроили нейросетевой классификатор для прогнозирования дефолта по кредитным картам, работая с дисбалансом классов, регуляризацией, feature engineering, оценкой модели и оптимизацией decision threshold.",
+            "Финальный ML-проект, выполненный и успешно защищённый в рамках программы Veritas AI Scholars. Мы разработали нейросетевой классификатор для прогнозирования дефолта по кредитным картам.",
+          context:
+            "Дисбаланс классов · регуляризация · feature engineering · оценка модели · оптимизация decision threshold",
           badges: [],
         },
         "pharma-track": {

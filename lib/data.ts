@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Sadibek Nurmukhambet",
+  name: "Nurmukhambet Sadibek",
 };
 
 export const socialLinks = [

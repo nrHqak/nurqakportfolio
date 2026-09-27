@@ -13,14 +13,14 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nurmukhambet.vercel.app"),
-  title: "Sadibek Nurmukhambet — Software Engineer",
+  title: "Nurmukhambet Sadibek — Software Engineer",
   description:
     "Software engineer focused on Python, AI/ML, backend systems, algorithms and program analysis.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Sadibek Nurmukhambet — Software Engineer",
+    title: "Nurmukhambet Sadibek — Software Engineer",
     description:
       "Software engineer focused on Python, AI/ML, backend systems, algorithms and program analysis.",
     type: "website",

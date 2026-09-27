@@ -73,6 +73,8 @@ export interface Translations {
     selectedLabel: string;
     moreLabel: string;
     githubLabel: string;
+    previousLabel: string;
+    nextLabel: string;
     items: Record<string, ProjectTranslation>;
   };
   awards: {
