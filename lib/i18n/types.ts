@@ -6,24 +6,32 @@ export interface ProjectTranslation {
   badges: string[];
   eyebrow?: string;
   researchNote?: string;
+  context?: string;
 }
 
 export interface HighlightTranslation {
+  icon: "systems" | "ai" | "algorithms";
   title: string;
   description: string;
+  tags: string[];
 }
 
 export interface RecognitionItemTranslation {
   title: string;
   subtitle: string;
+  detail?: string;
+  mark?: string;
 }
 
 export interface RecognitionCategoryTranslation {
+  id: "cs" | "robotics" | "products" | "programs" | "leadership";
   title: string;
   items: RecognitionItemTranslation[];
 }
 
 export interface RecognitionSpotlightTranslation {
+  icon: "trophy" | "bot" | "code" | "leadership";
+  category: string;
   value: string;
   title: string;
   subtitle: string;
@@ -50,6 +58,7 @@ export interface Translations {
   about: {
     label: string;
     heading: string;
+    personal: string;
     highlights: HighlightTranslation[];
   };
   featured: {
@@ -78,9 +87,11 @@ export interface Translations {
     groups: {
       languages: string;
       backend: string;
+      frontend: string;
       ai: string;
-      algorithms: string;
+      systems: string;
     };
+    toolsLabel: string;
     languagesLabel: string;
     spokenLanguages: SpokenLanguageTranslation[];
   };
@@ -97,6 +108,5 @@ export interface Translations {
     title: string;
     location: string;
     school: string;
-    about: string;
   };
 }

@@ -11,9 +11,9 @@ export const socialLinks = [
   },
   {
     id: "instagram" as const,
-    url: "https://www.instagram.com/sadibeknn?igsh=NnhtOXR4amg4cjhs&utm_source=qr",
+    url: "https://www.instagram.com/sadibeknn/",
     label: "Instagram",
-    showInHero: false,
+    showInHero: true,
   },
   {
     id: "linkedin" as const,
@@ -142,30 +142,60 @@ export const projects: Project[] = [
 export const skills = [
   {
     key: "languages" as const,
-    items: ["Python", "C++", "SQL", "JavaScript / TypeScript"],
+    items: ["Python", "C++", "JavaScript", "TypeScript", "SQL", "Kotlin"],
   },
   {
     key: "backend" as const,
-    items: ["FastAPI", "PostgreSQL", "Supabase", "Docker", "REST APIs"],
+    items: [
+      "FastAPI",
+      "Django",
+      "PostgreSQL",
+      "SQLite",
+      "Supabase",
+      "SQLAlchemy",
+      "REST APIs",
+      "Docker",
+    ],
   },
   {
     key: "ai" as const,
     items: [
       "scikit-learn",
       "Neural Networks",
-      "LLM APIs",
+      "Classification",
       "Feature Engineering",
+      "Class Imbalance",
       "Model Evaluation",
+      "Threshold Optimization",
+      "LLM APIs",
+      "AI Agents",
     ],
   },
   {
-    key: "algorithms" as const,
+    key: "frontend" as const,
+    items: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Vite",
+      "Leaflet",
+      "Chromium Extensions",
+    ],
+  },
+  {
+    key: "systems" as const,
     items: [
       "Data Structures & Algorithms",
       "AST",
       "Execution Tracing",
       "Program Analysis",
-      "Arduino / MicroPython",
+      "Android",
+      "Call Screening",
+      "Notification Listener",
+      "Arduino",
+      "MicroPython",
     ],
   },
 ];
+
+export const workflowTools = ["Git", "GitHub", "Vercel", "Android Studio"];

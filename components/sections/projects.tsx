@@ -56,13 +56,27 @@ function ProjectCard({
         </span>
       </div>
 
-      <p className="text-xs text-primary/80 font-medium mb-3 leading-relaxed">
-        {project.stack.join(" · ")}
-      </p>
+      {compact && (
+        <p className="text-xs text-primary/80 font-medium mb-3 leading-relaxed">
+          {project.stack.join(" · ")}
+        </p>
+      )}
 
-      <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+      <p className="text-sm text-muted-foreground leading-[1.7] flex-1">
         {projectT.description}
       </p>
+
+      {projectT.context && (
+        <p className="mt-3 text-xs leading-relaxed text-foreground/65">
+          {projectT.context}
+        </p>
+      )}
+
+      {!compact && (
+        <p className="text-xs text-primary/80 font-medium mt-4 leading-relaxed">
+          {project.stack.join(" · ")}
+        </p>
+      )}
 
       {projectT.badges.length > 0 && (
         <div className="flex flex-wrap gap-2 mt-4">

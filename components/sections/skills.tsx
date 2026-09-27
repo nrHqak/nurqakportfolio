@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { skills } from "@/lib/data";
+import { skills, workflowTools } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 export function SkillsSection() {
@@ -25,7 +25,7 @@ export function SkillsSection() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-5 mb-5">
           {skills.map((group, index) => (
             <motion.div
               key={group.key}
@@ -33,7 +33,11 @@ export function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-card p-6"
+              className={`glass-card p-5 md:p-6 ${
+                group.key === "languages" || group.key === "backend" || group.key === "ai"
+                  ? "lg:col-span-2"
+                  : "lg:col-span-3"
+              }`}
             >
               <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">
                 {t.skills.groups[group.key]}
@@ -51,6 +55,23 @@ export function SkillsSection() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
+          className="glass-card mb-5 flex flex-wrap items-center gap-x-5 gap-y-3 px-5 py-4"
+        >
+          <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            {t.skills.toolsLabel}
+          </h3>
+          {workflowTools.map((tool) => (
+            <span key={tool} className="text-sm text-foreground/85">
+              {tool}
+            </span>
+          ))}
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

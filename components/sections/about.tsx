@@ -6,7 +6,11 @@ import Image from "next/image";
 import { profile } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n/language-context";
 
-const highlightIcons = [Code2, BrainCircuit, Binary];
+const highlightIcons = {
+  systems: Code2,
+  ai: BrainCircuit,
+  algorithms: Binary,
+} as const;
 
 export function AboutSection() {
   const { t } = useLanguage();
@@ -28,48 +32,40 @@ export function AboutSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-6 lg:gap-8 items-start">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] h-full"
+            className="glass-card overflow-hidden md:grid md:grid-cols-[0.75fr_1.25fr] md:items-stretch md:gap-5 md:p-4 lg:block lg:p-0"
           >
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="glass-card p-6 md:p-8 h-full flex flex-col justify-between gap-6"
-            >
-              <div className="space-y-4">
-                <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-                  {t.profile.about}
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 min-h-[18rem] md:min-h-[22rem] h-full"
-            >
+            <div className="relative aspect-[4/5] w-full overflow-hidden bg-white/5 md:aspect-auto md:min-h-[320px] lg:aspect-[4/5] lg:min-h-0">
               <Image
                 src="/images/profile.jpg"
                 alt={profile.name}
                 width={960}
                 height={720}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-[44%_24%]"
               />
-            </motion.div>
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/45 to-transparent" />
+            </div>
+            <div className="p-5 md:flex md:flex-col md:justify-center md:p-2 lg:block lg:p-6">
+              <h3 className="text-lg font-semibold text-foreground">
+                {profile.name}
+              </h3>
+              <p className="mt-1 mb-4 text-xs text-muted-foreground">
+                {t.profile.school}
+              </p>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed whitespace-pre-line">
+                {t.about.personal}
+              </p>
+            </div>
           </motion.div>
 
-          <div className="grid gap-4 h-full">
+          <div className="grid gap-4">
             {t.about.highlights.map((item, index) => {
-              const Icon = highlightIcons[index];
+              const Icon = highlightIcons[item.icon];
 
               return (
                 <motion.div
@@ -78,18 +74,30 @@ export function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.5, delay: 0.1 * index }}
-                  className="glass-card min-w-0 p-5 md:p-6 flex items-start gap-4 h-full"
+                  className="glass-card min-w-0 p-5 md:p-6"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                    <Icon className="h-5 w-5 text-primary" />
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                      <Icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="font-semibold text-foreground">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="min-w-0">
-                    <h3 className="font-semibold text-foreground">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mt-0.5">
-                      {item.description}
-                    </p>
+                  <div className="mt-4 flex flex-wrap gap-1.5 pl-14">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs text-foreground/70"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </motion.div>
               );
